@@ -11,6 +11,9 @@ import { HomeComponent } from './components/home/home.component';
 import {EffectsModule} from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {RouterModule} from '@angular/router';
+import {PeopleModule} from './components/people/people.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,8 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
+    NgbModule,
     StoreModule.forRoot(reducers, {
       metaReducers
     }),
@@ -31,7 +36,7 @@ import { environment } from '../environments/environment';
       maxAge: 100, // Retains last 100 states
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

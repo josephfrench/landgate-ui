@@ -16,7 +16,7 @@ describe('PeopleEffects', () => {
       ]
     });
 
-    effects = TestBed.inject(PeopleEffects);
+    effects = TestBed.get(PeopleEffects);
   });
 
   it('should be created', () => {
