@@ -1,0 +1,20 @@
+<!-- TODO: make the header a responsive navigation menu with responsive layout -->
+<!-- Create a link to the people component/page -->
+
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a class="navbar-brand" href="#">Landgate</a>
+  <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse links">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" [routerLink]="['/home']" routerLinkActive="active" (click)="isMenuCollapsed = true">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" routerLink="/people" (click)="isMenuCollapsed = true">People</a>
+      <a class="nav-item nav-link" routerLink="/people-ngrx" (click)="isMenuCollapsed = true">People <small>(NGRX)</small></a>
+      <a class="nav-item nav-link" href="#" (click)="isMenuCollapsed = true">About</a>
+      <a class="nav-item nav-link" href="#" (click)="isMenuCollapsed = true">Blog</a>
+      <a class="nav-item nav-link" href="#" (click)="isMenuCollapsed = true">Contact</a>
+    </div>
+  </div>
+</nav>

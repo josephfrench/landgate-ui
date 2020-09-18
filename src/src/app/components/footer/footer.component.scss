@@ -1,0 +1,22 @@
+.footer {
+  padding: 3em 0 2em;
+  background-color: #000;
+  font: 16px Roboto, sans-serif;
+  color: #d4c598;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    padding-left: 10%;
+  }
+}

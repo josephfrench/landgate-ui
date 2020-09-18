@@ -1,0 +1,44 @@
+<div class="form-container">
+  <form [formGroup]="form">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="firstName" class="form-control" id="firstName" formControlName="firstName" aria-label="First Name" placeholder="First Name" required>
+      <div class="alert alert-danger" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+        Please input first name.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="lastName" class="form-control" id="lastName" formControlName="lastName" aria-label="Last Name" placeholder="Last Name">
+      <div class="alert alert-danger" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+        Please input last name.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="age" class="form-control" id="age" formControlName="age" aria-label="Age" placeholder="Age">
+      <div class="alert alert-danger" *ngIf="age.invalid && (age.dirty || age.touched)">
+        <div *ngIf="age.errors.required">
+          Please input age.
+        </div>
+        <div *ngIf="age.errors.maxlength">
+          Maximum length: {{age.errors.maxlength.requiredLength}}
+        </div>
+        <div *ngIf="age.errors.pattern">
+          Input numbers only.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="jobTitle">Job Title</label>
+      <input type="jobTitle" class="form-control" id="jobTitle" formControlName="jobTitle" aria-label="Job Title" placeholder="Job Title">
+      <div class="alert alert-danger" *ngIf="jobTitle.invalid && (jobTitle.dirty || jobTitle.touched)">
+        Please input job title.
+      </div>
+    </div>
+    <div class="form-buttons">
+      <button type="button" class="btn btn-secondary" (click)="onCancelClick()">Cancel</button>
+      <button type="button" class="btn btn-primary" ngbAutofocus (click)="onSaveClick()">Save</button>
+    </div>
+  </form>
+</div>
